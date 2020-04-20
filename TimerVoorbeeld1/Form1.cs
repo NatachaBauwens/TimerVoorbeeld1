@@ -39,7 +39,7 @@ namespace TimerVoorbeeld1
             tijd = tijd.AddMilliseconds(10);
             lbltijdTeller.Text = tijd.ToString("HH:mm:ss.fff");
             lbltijdNU.Text = DateTime.Now.ToString("dddd, dd-MMMM-yyyy HH:mm:ss.fff");
-            if (tijd.Second % 2 == 0 && tijd.Millisecond==0) wijzigkleur();
+            if (tijd.Second % 5 == 0 && tijd.Millisecond==0) wijzigkleur();
         }
 
         private void wijzigkleur()

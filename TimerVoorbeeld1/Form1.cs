@@ -19,7 +19,7 @@ namespace TimerVoorbeeld1
 
         private void init()
         {
-            tijd = new DateTime(1, 1, 1, 0, 0, 0);
+            tijd = new DateTime(1, 1, 1, 1, 1, 1);//hier ook
             rn = new Random();
         }
 
@@ -36,17 +36,17 @@ namespace TimerVoorbeeld1
 
         private void tijdweergeven(object sender, EventArgs e)
         { //TICK_EVENT           
-            tijd = tijd.AddMilliseconds(10);
+            tijd = tijd.AddMilliseconds(50);
             lbltijdTeller.Text = tijd.ToString("HH:mm:ss.fff");
             lbltijdNU.Text = DateTime.Now.ToString("dddd, dd-MMMM-yyyy HH:mm:ss.fff");
-            if (tijd.Second % 3 == 0 && tijd.Millisecond==0) wijzigkleur();
+            if (tijd.Second % 3 == 0 && tijd.Millisecond==0) wijzigkleur();//hier gewijzigd
         }
 
         private void wijzigkleur()
         {
-            int r = rn.Next(0, 255);
-            int g = rn.Next(0, 255);
-            int b = rn.Next(0, 255);
+            int r = rn.Next(100, 255);
+            int g = rn.Next(20, 255);
+            int b = rn.Next(0, 155);
             Color kleur = Color.FromArgb(255, r, g, b);
             this.BackColor = kleur;
         }
